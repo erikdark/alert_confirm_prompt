@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert, Confirm, Prompt Example</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <button id="alertBtn">Show Alert</button>
+    <button id="confirmBtn">Show Confirm</button>
+    <button id="promptBtn">Show Prompt</button>
+
+    <script>
+        document.getElementById('alertBtn').addEventListener('click', function() {
+            alert('This is an alert box!');
+        });
+
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            let result = confirm('Do you want to continue?');
+            if (result) {
+                alert('You pressed OK!');
+            } else {
+                alert('You pressed Cancel!');
+            }
+        });
+
+        document.getElementById('promptBtn').addEventListener('click', function() {
+            let answer = prompt('What is 5 + 5?', 'Type your answer here');
+            if (answer === '10') {
+                alert('Correct!');
+            } else {
+                alert('Incorrect!');
+            }
+        });
+    </script>
+</body>
+</html>
